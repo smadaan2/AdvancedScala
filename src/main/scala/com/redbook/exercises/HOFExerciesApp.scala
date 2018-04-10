@@ -1,5 +1,7 @@
 package com.redbook.exercises
 
+import scala.io.Source
+
 object HOFExerciesApp extends App {
 
   def curry[A,B,C](a: A,f: (A,B) => C) : B => C = {
@@ -63,6 +65,5 @@ object HOFExerciesApp extends App {
       case _ => None:Option[List[A]]
     }}
   }
-
 
 }

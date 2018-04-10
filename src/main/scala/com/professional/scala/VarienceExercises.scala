@@ -1,6 +1,6 @@
 package com.professional.scala
 
-object VarienceApp extends App {
+object VarienceExercises extends App {
 
   sealed trait Fruit {
     def describe: String

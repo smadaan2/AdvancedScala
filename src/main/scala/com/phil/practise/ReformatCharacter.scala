@@ -29,7 +29,14 @@ object NonFunctionalRequirements {
   val damageCount = new AtomicInteger()
   def nonfunctional: ((Character) => Character) => ErrorHandler[Character, Character] = (logging("Damaged {1}") andThen metrics(damageCount)) andThen error
 }
-
+//or
+object NonFunctionalRequirements1 {
+//  def nonFunctional(delegate: Character => Character): (Character => Character) =
+//    new Logging[Character, Character]("Damaged {1}",
+//      new Metrics(Character.damageCount,
+//        new ErrorHandler(
+//          delegate)))
+}
 
 object ChracterApp extends App {
   import NonFunctionalRequirements._
