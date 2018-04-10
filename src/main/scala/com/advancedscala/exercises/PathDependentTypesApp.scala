@@ -5,7 +5,6 @@ class NetworkSwitch {
   def switchPortOn(port: Port): Unit = { println(s"Switching on $port") }
 }
 
-
 //demonstrate the usefulness of path-dependent types
 
 object DependentTypesApp extends App{

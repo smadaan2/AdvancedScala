@@ -36,7 +36,6 @@ case class AnyMonad[M[_],T](inner: M[Option[T]])(implicit m: Monad[M]) {
 object MonadApp extends App {
   import Monad._
   val t = AnyMonad[Future, Int](Future(Some(1)))(futureMonad).map(i => i.toString).inner
-
   println(t)
 
 }

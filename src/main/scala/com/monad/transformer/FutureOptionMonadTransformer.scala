@@ -35,6 +35,4 @@ object FutureOptionMonadTransformer extends App{
     case Failure(ex) => println("result not completed")
   }
 
-
-
 }
