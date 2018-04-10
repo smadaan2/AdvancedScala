@@ -1,4 +1,4 @@
-package com.professional.scala
+package com.advancedscala.exercises
 
 //self recursive types
 trait Doubler[T] {

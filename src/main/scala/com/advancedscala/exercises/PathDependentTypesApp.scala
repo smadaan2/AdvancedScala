@@ -1,5 +1,4 @@
-package com.professional.scala
-
+package com.advancedscala.exercises
 
 class NetworkSwitch {
   class Port

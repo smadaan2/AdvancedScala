@@ -1,4 +1,4 @@
-package com.phil.practise
+package com.functional.programming.characterapp
 
 import java.util.concurrent.atomic.AtomicInteger
 

@@ -1,4 +1,4 @@
-package com.phil.practise
+package com.functional.programming.characterapp
 
 import scala.concurrent.{ExecutionContext, Future}
 import scala.concurrent.ExecutionContext.Implicits.global

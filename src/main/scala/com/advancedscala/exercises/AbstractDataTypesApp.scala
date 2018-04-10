@@ -1,4 +1,4 @@
-package com.professional.scala
+package com.advancedscala.exercises
 
 object AbstractDataTypesApp extends App{
 
