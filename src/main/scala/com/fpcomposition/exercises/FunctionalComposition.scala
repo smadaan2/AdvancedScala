@@ -1,4 +1,4 @@
-package com.functional.composition.exercises
+package com.fpcomposition.exercises
 
 import scala.Option
 import scalaz.Scalaz._
