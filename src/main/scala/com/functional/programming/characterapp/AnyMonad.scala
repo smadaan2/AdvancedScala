@@ -10,7 +10,19 @@ trait AnyMonad[M[_]] {
   def lift[T](t: T): M[T]
 }
 
+
+import scala.concurrent.{ExecutionContext, Future}
+import scala.concurrent.ExecutionContext.Implicits.global
+
+trait AnyMonad1[M[_]] {
+
+  def map[T,T1] (m: M[T])(f: T => T1): M[T1]
+  def flatMap[T,T1](m: M[T])(f: T => M[T1]): M[T1]
+  def lift[T](t: T): M[T]
+}
+
 object AnyMonad {
+
   implicit val ec = ExecutionContext
   implicit object futureMonad extends AnyMonad[Future] {
     override def map[T, T1](m: Future[T])(f: (T) => T1): Future[T1] = m.map(f)
@@ -22,3 +34,13 @@ object AnyMonad {
 }
 
 
+object App1 {
+  import AnyMonad._
+  def f1[M[_],A,B](f: A => B)(mb: M[A])(implicit im: AnyMonad[M]): M[B]= {     //
+    im.map(mb)(f)
+  }
+}
+
+object Test extends App {
+  App1.f1((s: String) => s.length)(Future("abd"))
+}
